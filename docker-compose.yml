@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres
+    container_name: db
+    ports: 
+      - 5433:5432
+    environment:
+      - POSTGRES_PASSWORD=123456
+    restart: always
+    networks: 
+      - dev
+  server:
+    build: 
+      context: ./serve
+      dockerfile: Dockerfile
+    # restart: always
+    ports: 
+      - 5000:5000
+    depends_on: # 需要依赖的服务，在依赖起来之后才会再起
+      - db
+    networks: 
+      - dev
+  web:
+    build: 
+      context: ./web
+      dockerfile: Dockerfile
+    restart: always
+    ports: 
+      - 8000:80
+    container_name: web
+    depends_on: 
+      - server
+    networks:
+      - dev
+networks:
+  dev:
