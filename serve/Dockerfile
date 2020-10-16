@@ -1,5 +1,5 @@
 # Base images 基础镜像
-FROM node
+FROM node:current-slim
 
 WORKDIR /root
 RUN mkdir server
