@@ -28,10 +28,10 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - 80:80
+      - 8000:80
     container_name: web
-    # depends_on:
-    #   - server
+    depends_on:
+      - server
     networks:
       - dev
 networks:
