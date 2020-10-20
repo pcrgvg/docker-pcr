@@ -4,7 +4,7 @@ cd ../web
 git clone https://github.com/pcrgvg/gvg_front
 cd gvg_front
 echo 'npm i'
-cnpm i
+nnpm i
 echo 'npm run build'
 npm run build
 cd ../../
