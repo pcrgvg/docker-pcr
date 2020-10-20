@@ -15,6 +15,7 @@ services:
     build:
       context: ./serve
       dockerfile: Dockerfile
+    # image: docker-pcr_server
     restart: always
     ports:
       - 5000:5000
@@ -34,5 +35,5 @@ services:
       - server
     networks:
       - dev
-networks:
+networks: # 同网络
   dev:

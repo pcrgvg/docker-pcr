@@ -3,10 +3,11 @@ FROM node:current-slim
 
 WORKDIR /root
 RUN mkdir server
-COPY pcr/ /root/server/
+COPY pcr_server/ /root/server/
 WORKDIR /root/server
 ENV NODE_ENV=prod
-RUN npm i
+RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
+RUN cnpm i
 
 
 EXPOSE 5000
