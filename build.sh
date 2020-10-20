@@ -3,7 +3,7 @@ git clone https://github.com/pcrgvg/pcr_server
 cd ../web
 git clone https://github.com/pcrgvg/gvg_front
 cd gvg_front
-echo 'cnpm i'
+echo 'npm i'
 cnpm i
 echo 'npm run build'
 npm run build
