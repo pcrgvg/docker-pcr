@@ -9,6 +9,8 @@ services:
     environment:
       - POSTGRES_PASSWORD=123456
     restart: always
+    volumes: 
+      - "dbdata:/var/lib/postgresql/data"
     networks:
       - dev
   server:
@@ -37,3 +39,5 @@ services:
       - dev
 networks: # 同网络
   dev:
+volumes:
+  dbdata:
