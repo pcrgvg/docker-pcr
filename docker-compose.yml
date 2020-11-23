@@ -37,6 +37,18 @@ services:
       - server
     networks:
       - dev
+  web1:
+    build:
+      context: ./web1
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8888:80
+    container_name: web1
+    depends_on:
+      - server
+    networks:
+      - dev
 networks: # 同网络
   dev:
 volumes:

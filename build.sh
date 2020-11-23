@@ -1,10 +1,10 @@
 cd serve
-git clone https://github.com/pcrgvg/pcr_server
+# git clone https://github.com/pcrgvg/pcr_server
 cd ../web
-git clone https://github.com/pcrgvg/gvg_front
+# git clone https://github.com/pcrgvg/gvg_front
 cd gvg_front
-echo 'npm i'
-npm i
+# echo 'npm i'
+# npm i
 echo 'npm run build'
 npm run build
 cd ../../
