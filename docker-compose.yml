@@ -37,14 +37,14 @@ services:
       - server
     networks:
       - dev
-  web1:
+  webadminjp:
     build:
-      context: ./web1
+      context: ./webAdminjp
       dockerfile: Dockerfile
     restart: always
     ports:
       - 8888:80
-    container_name: web1
+    container_name: webadminjp
     depends_on:
       - server
     networks:
