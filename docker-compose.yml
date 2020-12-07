@@ -19,6 +19,9 @@ services:
       dockerfile: Dockerfile
     # image: docker-pcr_server
     restart: always
+    volumes: 
+      - "log:/var/lib/log/data"
+      - "sqlite:/var/lib/sqlite/data"
     ports:
       - 5000:5000
     depends_on: # 需要依赖的服务，在依赖起来之后才会再起
@@ -53,3 +56,5 @@ networks: # 同网络
   dev:
 volumes:
   dbdata:
+  log:
+  sqlite:
