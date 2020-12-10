@@ -19,6 +19,9 @@ services:
       dockerfile: Dockerfile
     # image: docker-pcr_server
     restart: always
+    volumes: 
+      - "log:/root/server/src/log"
+      - "sqlite:/root/server/src/assets"
     ports:
       - 5000:5000
     depends_on: # 需要依赖的服务，在依赖起来之后才会再起
@@ -37,14 +40,14 @@ services:
       - server
     networks:
       - dev
-  web1:
+  webadminjp:
     build:
-      context: ./web1
+      context: ./webAdminjp
       dockerfile: Dockerfile
     restart: always
     ports:
       - 8888:80
-    container_name: web1
+    container_name: webadminjp
     depends_on:
       - server
     networks:
@@ -53,3 +56,5 @@ networks: # 同网络
   dev:
 volumes:
   dbdata:
+  log:
+  sqlite:

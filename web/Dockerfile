@@ -2,6 +2,8 @@
 FROM nginx
 
 WORKDIR /root
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN echo 'Asia/Shanghai' >/etc/timezone
 COPY pcr/ /usr/share/nginx/html/
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 # COPY nginx/nginx.conf /etc/nginx/nginx.conf
