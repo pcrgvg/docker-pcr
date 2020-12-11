@@ -20,7 +20,7 @@ services:
     # image: docker-pcr_server
     restart: always
     volumes: 
-      - "log:/root/server/src/log"
+      - "log:/root/server/src/log"  #source:target source为主机地址, target为容器内地址
       - "sqlite:/root/server/src/assets"
     ports:
       - 5000:5000
