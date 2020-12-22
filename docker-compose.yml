@@ -40,18 +40,6 @@ services:
       - server
     networks:
       - dev
-  webadminjp:
-    build:
-      context: ./webAdminjp
-      dockerfile: Dockerfile
-    restart: always
-    ports:
-      - 8888:80
-    container_name: webadminjp
-    depends_on:
-      - server
-    networks:
-      - dev
 networks: # 同网络
   dev:
 volumes:
