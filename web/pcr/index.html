@@ -2,17 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Pcr</title>
+    <title>PcrGvg</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.f9d2fd290d0f2be07507.css"></head>
-  <body class="mat-typography">
-    <app-root></app-root>
-  <script src="runtime.b99fced3e50c8ed239ae.js" defer></script><script src="polyfills.a4021de53358bb0fec14.js" defer></script><script src="main.ca901cc7d71c44e564f7.js" defer></script></body>
+    <script>
+        function loadingError() {
+          const loading = document.getElementById('loading')
+          loading.src="./assets/images/loading.gif"
+        }
+    </script>
+    <style>
+
+    </style>
+  <link rel="stylesheet" href="styles.f442699d2dc21ecc7bc8.css"></head>
+  <body>
+    <pcr-root>
+      <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+        <img id="loading"  onerror="loadingError()"  src="https://pcr-icon.oss-cn-beijing.aliyuncs.com/common/loading.gif" alt="" />
+        <!-- <div style="text-align: center; margin-top: 16px;">臭鼬打拳中...</div> -->
+      </div>
+    </pcr-root>
+  <script src="runtime.d7575aad793e3b47e406.js" defer></script><script src="polyfills.35a5ca1855eb057f016a.js" defer></script><script src="main.20851b7e0ed8a31008e6.js" defer></script></body>
 </html>
