@@ -37,18 +37,18 @@ services:
       - redis
     networks:
       - dev
-  web:
-    build:
-      context: ./web
-      dockerfile: Dockerfile
-    restart: always
-    ports:
-      - 8000:80
-    container_name: web
-    depends_on:
-      - server
-    networks:
-      - dev
+  # web:
+  #   build:
+  #     context: ./web
+  #     dockerfile: Dockerfile
+  #   restart: always
+  #   ports:
+  #     - 8000:80
+  #   container_name: web
+  #   depends_on:
+  #     - server
+  #   networks:
+  #     - dev
 networks: # 同网络
   dev:
 volumes:
