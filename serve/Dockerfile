@@ -9,7 +9,7 @@ COPY pcr_server/ /root/server/
 WORKDIR /root/server
 ENV NODE_ENV=prod
 # RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
-RUN npm i --registry=https://registry.npm.taobao.org
+RUN npm i 
 
 
 EXPOSE 5000

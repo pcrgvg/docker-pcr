@@ -13,14 +13,14 @@ services:
       - "dbdata:/var/lib/postgresql/data"
     networks:
       - dev
-  redis:
-    image: redis:6.0.10
-    container_name: redisip
-    ports:
-      - 6379:6379
-    restart: always
-    networks:
-      - dev
+  # redis:
+  #   image: redis:6.0.10
+  #   container_name: redisip
+  #   ports:
+  #     - 6379:6379
+  #   restart: always
+  #   networks:
+  #     - dev
   server:
     build:
       context: ./serve
@@ -34,21 +34,21 @@ services:
       - 5000:5000
     depends_on: # 需要依赖的服务，在依赖起来之后才会再起
       - db
-      - redis
+      # - redis
     networks:
       - dev
-  # web:
-  #   build:
-  #     context: ./web
-  #     dockerfile: Dockerfile
-  #   restart: always
-  #   ports:
-  #     - 8000:80
-  #   container_name: web
-  #   depends_on:
-  #     - server
-  #   networks:
-  #     - dev
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8000:80
+    container_name: web
+    depends_on:
+      - server
+    networks:
+      - dev
 networks: # 同网络
   dev:
 volumes:
