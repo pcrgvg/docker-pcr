@@ -1,5 +1,6 @@
 # Base images 基础镜像
-FROM node:current-slim
+# FROM node:current-slim
+FROM buildkite/puppeteer:7.1.0
 
 WORKDIR /root
 RUN mkdir server
