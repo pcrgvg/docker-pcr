@@ -29,7 +29,7 @@ services:
     restart: always
     volumes: 
       - "log:/root/server/src/log"  #source:target source为主机地址, target为容器内地址
-      - "sqlite:/root/server/src/assets"
+      - "sqlite1:/root/server/src/assets"
     ports:
       - 5000:5000
     depends_on: # 需要依赖的服务，在依赖起来之后才会再起
@@ -54,4 +54,4 @@ networks: # 同网络
 volumes:
   dbdata:
   log:
-  sqlite:
+  sqlite1:
