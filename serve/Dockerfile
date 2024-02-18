@@ -1,5 +1,5 @@
 # Base images 基础镜像
-FROM node:16.13.2
+FROM node:20.11.1
 # FROM buildkite/puppeteer:7.1.0
 
 WORKDIR /root
